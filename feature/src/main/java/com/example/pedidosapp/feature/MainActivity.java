@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //enlazar componente
         btnIniciar = (Button)  findViewById(R.id.btnIniciar);
         edName = (EditText) findViewById(R.id.edName);
         edPasswd = (EditText) findViewById(R.id.edPasswd);
@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent ir = new Intent(MainActivity.this,Home.class);
                 ir.addFlags(ir.FLAG_ACTIVITY_CLEAR_TASK | ir.FLAG_ACTIVITY_CLEAR_TOP);
                 if(validar()){
+                    Bundle datos = new Bundle();
+                    datos.putString("user",edName.getText().toString().trim());
+                    datos.putString("passwd",edPasswd.getText().toString().trim());
+                    ir.putExtras(datos);
                     startActivity(ir);
                 }else{
                     //Primer punto actividid. Mejorar notificación con botones de aceptr y cancelar

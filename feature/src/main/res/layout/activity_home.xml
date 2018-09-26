@@ -14,6 +14,49 @@
         android:gravity="center"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <TextView
+               android:id="@+id/textView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Usuario:" />
+
+           <EditText
+               android:id="@+id/forName"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:inputType="textPersonName"
+               android:text="" />
+
+           <TextView
+               android:id="@+id/textView2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Contraseña" />
+
+           <EditText
+               android:id="@+id/forPasswd"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:inputType="textPersonName"
+               android:text="" />
+       </LinearLayout>
+
+       <Button
+           android:id="@+id/btnInventario"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Inventario" />
+
        <Button
            android:id="@+id/btnVolver"
            android:layout_width="wrap_content"
@@ -22,5 +65,26 @@
            android:onClick="volver"
            tools:layout_editor_absoluteX="124dp"
            tools:layout_editor_absoluteY="76dp" />
+
+       <TextView
+           android:id="@+id/tvContador"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:inputType="textPersonName"
+           android:text="" />
+       <EditText
+           android:id="@+id/edNewName"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="" />
+       <Button
+           android:id="@+id/btnSumar"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Sumar"
+           android:onClick="sumar"
+           tools:layout_editor_absoluteX="124dp"
+           tools:layout_editor_absoluteY="76dp" />
+
    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
