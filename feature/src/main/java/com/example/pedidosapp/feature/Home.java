@@ -3,6 +3,8 @@ package com.example.pedidosapp.feature;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,7 +46,25 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         }else{
             contador=0;
         }
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    ///////////////////////////menu------------
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    ///////////////////////////menu------------
+
+
     public  void volver(View h){
         Intent volver = new Intent(Home.this,MainActivity.class);
         volver.addFlags(volver.FLAG_ACTIVITY_CLEAR_TASK | volver.FLAG_ACTIVITY_CLEAR_TOP);
@@ -52,18 +72,18 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     }
     @Override
     public void onClick(View v) {
-    switch (v.getId()){
-        case R.id.btnInventario:
-            //Toast.makeText(this,"Hola inventario",Toast.LENGTH_LONG).show();
+        int i = v.getId();
+        if (i == R.id.btnInventario) {
             showInventario();
-            break;
+        }
     }
-    }
+
     public void showInventario(){
         Intent ir = new Intent(Home.this,Inventario.class);
         ir.addFlags(ir.FLAG_ACTIVITY_CLEAR_TASK | ir.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(ir);
     }
+
     public void sumar(View u){
             contador=contador+1;
             tvContador.setText(""+contador);
